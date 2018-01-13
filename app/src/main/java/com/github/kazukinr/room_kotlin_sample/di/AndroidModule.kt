@@ -7,7 +7,9 @@ import dagger.android.ContributesAndroidInjector
 /**
  * Created by kazuki on 2018/01/13.
  */
-@Module
+@Module(includes = arrayOf(
+        AppModule::class
+))
 abstract class AndroidModule {
 
     @ContributesAndroidInjector
