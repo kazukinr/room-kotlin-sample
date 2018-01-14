@@ -1,6 +1,6 @@
 package com.github.kazukinr.room_kotlin_sample.di
 
-import com.github.kazukinr.room_kotlin_sample.MainActivity
+import com.github.kazukinr.room_kotlin_sample.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

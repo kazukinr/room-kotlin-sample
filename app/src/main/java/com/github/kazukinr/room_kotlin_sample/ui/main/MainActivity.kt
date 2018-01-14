@@ -1,8 +1,8 @@
-package com.github.kazukinr.room_kotlin_sample
+package com.github.kazukinr.room_kotlin_sample.ui.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.github.kazukinr.room_kotlin_sample.data.MyDatabase
+import com.github.kazukinr.room_kotlin_sample.R
 import com.github.kazukinr.room_kotlin_sample.repository.MetaRepository
 import dagger.android.AndroidInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     Timber.i("count : ${it.size}")
+                    it.forEach { meta ->
+                        Timber.i("name : ${meta.name} , tbl_name : ${meta.tableName} , sql : ${meta.sql}")
+                    }
 
                 }, { Timber.e(it) })
     }
